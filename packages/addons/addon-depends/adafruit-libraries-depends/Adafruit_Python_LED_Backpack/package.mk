@@ -18,12 +18,11 @@
 
 PKG_NAME="Adafruit_Python_LED_Backpack"
 PKG_VERSION="ac6e25a"
-PKG_SHA256="55e82c45858e6ede604b5e31408e34d1f71c2610ae4a6a595a683e197e083fa2"
 PKG_ARCH="any"
 PKG_LICENSE="MIT"
 PKG_SITE="https://github.com/adafruit/${PKG_NAME}"
 PKG_URL="https://github.com/adafruit/${PKG_NAME}/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain Python distutilscross:host"
+PKG_DEPENDS_TARGET="Python distutilscross:host"
 PKG_SECTION="python"
 PKG_SHORTDESC="Python library for controlling LED backpack displays."
 PKG_LONGDESC="Python library for controlling LED backpack displays such as 8x8 matrices, bar graphs, and 7/14-segment displays on a Raspberry Pi or BeagleBone Black."

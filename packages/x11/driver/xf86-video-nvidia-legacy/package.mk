@@ -18,12 +18,11 @@
 
 PKG_NAME="xf86-video-nvidia-legacy"
 PKG_VERSION="340.102"
-PKG_SHA256="6a36bd9a0033769ecd11ce2aa60aeb41b50b20616c43fd19c55e027c451f585e"
 PKG_ARCH="x86_64"
 PKG_LICENSE="nonfree"
 PKG_SITE="http://www.nvidia.com/"
 PKG_URL="http://us.download.nvidia.com/XFree86/Linux-x86_64/$PKG_VERSION/NVIDIA-Linux-x86_64-$PKG_VERSION-no-compat32.run"
-PKG_DEPENDS_TARGET="toolchain util-macros linux xorg-server libvdpau"
+PKG_DEPENDS_TARGET="util-macros linux xorg-server libvdpau"
 PKG_NEED_UNPACK="$LINUX_DEPENDS"
 PKG_SECTION="x11/driver"
 PKG_SHORTDESC="xf86-video-nvidia-legacy: The Xorg driver for NVIDIA video chips supporting Geforce 6 and Geforce 7 devices too"

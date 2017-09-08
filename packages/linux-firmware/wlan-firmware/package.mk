@@ -18,12 +18,11 @@
 
 PKG_NAME="wlan-firmware"
 PKG_VERSION="34a47d9"
-PKG_SHA256="91dc9af5689cd7275723d6b825e5c3d800b7b8149e031a24e48556e030f63af8"
 PKG_ARCH="any"
 PKG_LICENSE="Free-to-use"
 PKG_SITE="https://github.com/LibreELEC/wlan-firmware"
 PKG_URL="https://github.com/LibreELEC/wlan-firmware/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="firmware"
 PKG_SHORTDESC="wlan-firmware: firmwares for various WLAN drivers"
 PKG_LONGDESC="wlan-firmware: firmwares for various WLAN drivers"

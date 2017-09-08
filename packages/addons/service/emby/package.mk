@@ -18,12 +18,11 @@
 
 PKG_NAME="emby"
 PKG_VERSION="3.2.27.0"
-PKG_SHA256="218774083a0ca980ba8bb916d5532e294176f6d6dc88f0a488ee82d33789f104"
 PKG_REV="116"
 PKG_LICENSE="OSS"
 PKG_SITE="http://emby.media"
 PKG_URL="https://github.com/MediaBrowser/Emby/releases/download/$PKG_VERSION/Emby.Mono.zip"
-PKG_DEPENDS_TARGET="toolchain ffmpegx imagemagick"
+PKG_DEPENDS_TARGET="ffmpegx imagemagick"
 PKG_SECTION="service"
 PKG_SHORTDESC="Emby: a personal media server"
 PKG_LONGDESC="Emby Server ($PKG_VERSION) brings your home videos, music, and photos together, automatically converting and streaming your media on-the-fly to any device"

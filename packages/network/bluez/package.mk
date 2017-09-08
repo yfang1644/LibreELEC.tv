@@ -18,12 +18,11 @@
 
 PKG_NAME="bluez"
 PKG_VERSION="5.45"
-PKG_SHA256="4cacb00703a6bc149cb09502257d321597d43952374a16f3558766ffa85364e9"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.bluez.org/"
 PKG_URL="http://www.kernel.org/pub/linux/bluetooth/$PKG_NAME-$PKG_VERSION.tar.xz"
-PKG_DEPENDS_TARGET="toolchain dbus glib readline systemd"
+PKG_DEPENDS_TARGET="dbus glib readline systemd"
 PKG_SECTION="network"
 PKG_SHORTDESC="bluez: Bluetooth Tools and System Daemons for Linux."
 PKG_LONGDESC="Bluetooth Tools and System Daemons for Linux."

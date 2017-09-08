@@ -18,12 +18,11 @@
 
 PKG_NAME="libretro-prboom"
 PKG_VERSION="d2532ad"
-PKG_SHA256="509c5c85f7a2f37466a38bddf8f259adfa0d87bf2ae588582d39b6dd2b8e0a3d"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/libretro/libretro-prboom"
 PKG_URL="https://github.com/libretro/libretro-prboom/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform"
+PKG_DEPENDS_TARGET="kodi-platform"
 PKG_SECTION="emulation"
 PKG_SHORTDESC="game.libretro.prboom: prboom for Kodi"
 PKG_LONGDESC="game.libretro.prboom: prboom for Kodi"

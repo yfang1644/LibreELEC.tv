@@ -18,12 +18,11 @@
 
 PKG_NAME="wlan-firmware-aml"
 PKG_VERSION="5f5fae7"
-PKG_SHA256="a50e19c812d8064790a307a59ce23fd139ed4b21152c669e56367f1367be7008"
 PKG_ARCH="any"
 PKG_LICENSE="Free-to-use"
 PKG_SITE="http://openlinux.amlogic.com:8000/download/ARM/wifi/"
 PKG_URL="https://github.com/openwetek/wlan-firmware-aml/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="firmware"
 PKG_SHORTDESC="wlan-firmware-aml: Firmware for various WLAN chips used in the devices based on Amlogic SoCs"
 PKG_LONGDESC="wlan-firmware-aml: Firmware for various WLAN chips used in the devices based on Amlogic SoCs"

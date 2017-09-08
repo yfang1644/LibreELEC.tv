@@ -18,12 +18,11 @@
 
 PKG_NAME="moonlight-embedded"
 PKG_VERSION="9301898"
-PKG_SHA256="62fcfbb0c775b0b8836e9b959ea9bebf0ffeecc6424e90f6e4beab353f1ef2d0"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/irtimmer/moonlight-embedded"
 PKG_URL="https://github.com/irtimmer/moonlight-embedded/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain curl libcec pulseaudio ffmpeg systemd alsa-lib moonlight-common-c libevdev enet opus"
+PKG_DEPENDS_TARGET="curl libcec pulseaudio ffmpeg systemd alsa-lib moonlight-common-c libevdev enet opus"
 PKG_SECTION=""
 PKG_SHORTDESC="Gamestream client for embedded systems"
 PKG_LONGDESC="Moonlight Embedded is an open source implementation of NVIDIA's GameStream, as used by the NVIDIA Shield, but built for Linux"

@@ -18,12 +18,11 @@
 
 PKG_NAME="util-macros"
 PKG_VERSION="1.19.1"
-PKG_SHA256="18d459400558f4ea99527bc9786c033965a3db45bf4c6a32eefdc07aa9e306a6"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/util/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="x11/util"
 PKG_SHORTDESC="util-macros: X.org autoconf utilities"
 PKG_LONGDESC="X.org autoconf utilities such as M4 macros."

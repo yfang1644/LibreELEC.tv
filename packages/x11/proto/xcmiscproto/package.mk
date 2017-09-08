@@ -18,14 +18,14 @@
 
 PKG_NAME="xcmiscproto"
 PKG_VERSION="1.2.2"
-PKG_SHA256="b13236869372256c36db79ae39d54214172677fb79e9cdc555dceec80bd9d2df"
 PKG_ARCH="any"
 PKG_LICENSE="OpenSource"
+PKG_MAINTAINER="Alan Coopersmith <alan.coopersmith@oracle.com>"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/proto/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="x11/proto"
-PKG_SHORTDESC="xcmiscproto: XCMisc extension headers"
+PKG_SHORTDESC="XCMisc extension headers"
 PKG_LONGDESC="XCMisc extension headers"
 
 PKG_IS_ADDON="no"
@@ -33,3 +33,7 @@ PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"
+
+make_package_target() {
+  :
+}

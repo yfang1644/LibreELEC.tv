@@ -18,12 +18,11 @@
 
 PKG_NAME="inotify-tools"
 PKG_VERSION="1df9af4"
-PKG_SHA256="628b8efabb65a739dd747fe43b73b29a609b5cfa9628caa127764ed77766a6e1"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="http://wiki.github.com/rvoicilas/inotify-tools/"
 PKG_URL="https://github.com/rvoicilas/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="tools"
 PKG_SHORTDESC="inotify-tools"
 PKG_LONGDESC="a C library and a set of command-line programs for Linux providing a simple interface to inotify"

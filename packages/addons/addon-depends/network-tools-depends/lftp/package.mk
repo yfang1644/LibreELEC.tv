@@ -18,12 +18,11 @@
 
 PKG_NAME="lftp"
 PKG_VERSION="4.7.4"
-PKG_SHA256="8f55c37cfdfbce24a9cb47b621ca127f40d3a7de5b4c49f8c49f17bff728fb31"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://lftp.yar.ru/"
 PKG_URL="http://lftp.yar.ru/ftp/${PKG_NAME}-${PKG_VERSION}.tar.gz"
-PKG_DEPENDS_TARGET="toolchain readline openssl zlib"
+PKG_DEPENDS_TARGET="readline openssl zlib"
 PKG_SECTION="tools"
 PKG_SHORTDESC="ftp client"
 PKG_LONGDESC="LFTP is a sophisticated ftp/http client, and a file transfer program supporting a number of network protocols"

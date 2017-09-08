@@ -18,12 +18,11 @@
 
 PKG_NAME="w_scan"
 PKG_VERSION="20170107"
-PKG_SHA256="38e0f38a7bf06cff6d6ea01652ad4ee60da2cb0e937360468f936da785b46ffe"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://wirbel.htpc-forum.de/w_scan/index2.html"
 PKG_URL="http://wirbel.htpc-forum.de/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="tools"
 PKG_SHORTDESC="DVBlast is a small channel scan tool to create an channel.conf for VDR"
 PKG_LONGDESC="DVBlast is a small channel scan tool to create an channel.conf for VDR"

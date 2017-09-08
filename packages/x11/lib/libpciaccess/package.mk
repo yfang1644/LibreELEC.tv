@@ -18,12 +18,11 @@
 
 PKG_NAME="libpciaccess"
 PKG_VERSION="0.13.5"
-PKG_SHA256="752c54e9b3c311b4347cb50aea8566fa48eab274346ea8a06f7f15de3240b999"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://freedesktop.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/lib/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros zlib"
+PKG_DEPENDS_TARGET="util-macros zlib"
 PKG_SECTION="x11/lib"
 PKG_SHORTDESC="libpciaccess: X.org libpciaccess library"
 PKG_LONGDESC="X.org libpciaccess library."

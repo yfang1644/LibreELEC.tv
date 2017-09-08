@@ -18,14 +18,14 @@
 
 PKG_NAME="xineramaproto"
 PKG_VERSION="1.2.1"
-PKG_SHA256="977574bb3dc192ecd9c55f59f991ec1dff340be3e31392c95deff423da52485b"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
+PKG_MAINTAINER="Alan Coopersmith <alan.coopersmith@sun.com>"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/proto/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="x11/proto"
-PKG_SHORTDESC="xineramaproto: Xinerama extension headers"
+PKG_SHORTDESC="Xinerama extension headers"
 PKG_LONGDESC="Xinerama extension headers"
 
 PKG_IS_ADDON="no"
@@ -33,3 +33,7 @@ PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"
+
+make_package_target() {
+  :
+}

@@ -18,12 +18,11 @@
 
 PKG_NAME="font-bitstream-type1"
 PKG_VERSION="1.0.3"
-PKG_SHA256="c6ea0569adad2c577f140328dc3302e729cb1b1ea90cd0025caf380625f8a688"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/font/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros"
+PKG_DEPENDS_TARGET="util-macros"
 PKG_SECTION="x11/font"
 PKG_SHORTDESC="font-bitstream-type1: Bitstream font family"
 PKG_LONGDESC="Bitstream font family."

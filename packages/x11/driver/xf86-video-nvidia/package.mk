@@ -21,12 +21,11 @@ PKG_NAME="xf86-video-nvidia"
 # "packages/x11/driver/xf86-video-nvidia/udev.d/96-nvidia.rules" whenever bumping version.
 # Host may require installation of python-lxml and python-requests packages.
 PKG_VERSION="384.69"
-PKG_SHA256="1011b9a9db903d243ff722fc7982da7b91dc91f4b82c60227d89b812aa67257f"
 PKG_ARCH="x86_64"
 PKG_LICENSE="nonfree"
 PKG_SITE="http://www.nvidia.com/"
 PKG_URL="http://us.download.nvidia.com/XFree86/Linux-x86_64/$PKG_VERSION/NVIDIA-Linux-x86_64-$PKG_VERSION-no-compat32.run"
-PKG_DEPENDS_TARGET="toolchain util-macros linux xorg-server libvdpau"
+PKG_DEPENDS_TARGET="util-macros linux xorg-server libvdpau"
 PKG_NEED_UNPACK="$LINUX_DEPENDS"
 PKG_SECTION="x11/driver"
 PKG_SHORTDESC="xf86-video-nvidia: The Xorg driver for NVIDIA video chips"

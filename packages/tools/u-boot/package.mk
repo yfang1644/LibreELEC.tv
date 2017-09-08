@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="u-boot"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 if [ "$UBOOT_VERSION" = "imx6-cuboxi" ]; then
   PKG_COMMIT="ad02f49"
   PKG_VERSION="imx6-$PKG_COMMIT"

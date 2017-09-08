@@ -23,7 +23,7 @@ PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE=""
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="virtual"
 PKG_SHORTDESC="A bundle of system tools and programs"
 PKG_LONGDESC="This bundle currently includes autossh, diffutils, dtach, efibootmgr, evtest, fdupes, file, getscancodes, hddtemp, hd-idle, hid_mapper, i2c-tools, inotify-tools, jq, lm_sensors, lshw, mc, mrxvt, mtpfs, nmon, p7zip, patch, pv, screen, strace, unrar and usb-modeswitch."
@@ -35,7 +35,7 @@ PKG_ADDON_PROVIDES=""
 
 PKG_AUTORECONF="no"
 
-PKG_DEPENDS_TARGET="toolchain \
+PKG_DEPENDS_TARGET="\
                     autossh \
                     diffutils \
                     dstat \

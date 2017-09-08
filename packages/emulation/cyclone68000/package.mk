@@ -18,12 +18,11 @@
 
 PKG_NAME="cyclone68000"
 PKG_VERSION="66dda84"
-PKG_SHA256="c59900531e35e7303e1172d9bd5d161491b4554983930ad855614252156ea0e0"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/notaz/cyclone68000"
 PKG_URL="https://github.com/notaz/cyclone68000/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="emulation"
 PKG_SHORTDESC="Motorola 68000 emulator written in ARM assembly"
 PKG_LONGDESC="Motorola 68000 emulator written in ARM assembly"

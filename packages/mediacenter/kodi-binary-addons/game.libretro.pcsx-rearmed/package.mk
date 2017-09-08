@@ -18,14 +18,13 @@
 
 PKG_NAME="game.libretro.pcsx-rearmed"
 PKG_VERSION="b6a4644"
-PKG_SHA256="4c89b49897adf2c740ad33db44b2f34845c8008dade69ea77648b34b79702a23"
 PKG_REV="103"
 # neon optimizations make it only useful for arm
 PKG_ARCH="arm"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.pcsx-rearmed"
 PKG_URL="https://github.com/kodi-game/game.libretro.pcsx-rearmed/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform libretro-pcsx-rearmed"
+PKG_DEPENDS_TARGET="kodi-platform libretro-pcsx-rearmed"
 PKG_SECTION=""
 PKG_SHORTDESC="game.libretro.pcsx-rearmed: PCSX Rearmed for Kodi"
 PKG_LONGDESC="game.libretro.pcsx-rearmed: PCSX Rearmed for Kodi"

@@ -18,12 +18,11 @@
 
 PKG_NAME="libmtp"
 PKG_VERSION="1.1.13"
-PKG_SHA256="494ee02fbfbc316aad75b93263dac00f02a4899f28cfda1decbbd6e26fda6d40"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://libmtp.sourceforge.net/"
 PKG_URL="$SOURCEFORGE_SRC/project/$PKG_NAME/$PKG_NAME/$PKG_VERSION/$PKG_NAME-$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain libusb"
+PKG_DEPENDS_TARGET="libusb"
 PKG_SECTION="libs"
 PKG_SHORTDESC="MTP library"
 PKG_LONGDESC="libmtp is an Initiator implementation of the Media Transfer Protocol (MTP) in the form of a library suitable primarily for POSIX compliant operating systems. We implement MTP Basic, the stuff proposed for standardization."

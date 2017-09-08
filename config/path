@@ -17,11 +17,17 @@ set -e
   fi
 
 HOST_NAME=`$LOCAL_CC -dumpmachine`
-TARGET_NAME=$TARGET_GCC_ARCH-libreelec-linux-gnu${TARGET_ABI}
+TARGET_NAME=$TARGET_ARCH-linux
+TARGET_BUILD=$TARGET_NAME
 
-BUILD=$ROOT/$BUILD_BASE.$DISTRONAME-${DEVICE:-$PROJECT}.$TARGET_ARCH-$LIBREELEC_VERSION
+# some packages do not recognize "--host=aarch64-linux"
+if [ $TARGET_ARCH = "aarch64" ]; then
+  TARGET_BUILD="arm-linux"
+fi
+
+BUILD=$ROOT/$BUILD_BASE.$DISTRONAME-$PROJECT.$TARGET_ARCH-$LIBREELEC_VERSION
 if [ "$LIBREELEC_VERSION" = "devel" ] ; then
-  BUILD=$ROOT/$BUILD_BASE.$DISTRONAME-${DEVICE:-$PROJECT}.$TARGET_ARCH-$OS_VERSION-$LIBREELEC_VERSION
+  BUILD=$ROOT/$BUILD_BASE.$DISTRONAME-$PROJECT.$TARGET_ARCH-$OS_VERSION-$LIBREELEC_VERSION
 fi
 
 if [ -n "$BUILD_SUFFIX" ]; then
@@ -38,7 +44,7 @@ DOCS=DOCS
 TOOLCHAIN=$BUILD/toolchain
 SYSROOT_PREFIX=$TOOLCHAIN/$TARGET_NAME/sysroot
 LIB_PREFIX=$SYSROOT_PREFIX/usr
-TARGET_PREFIX=$TOOLCHAIN/bin/$TARGET_NAME-
+TARGET_PREFIX=$TARGET_NAME-
 
 FAKEROOT_SCRIPT=$BUILD/.fakeroot
 
@@ -49,8 +55,8 @@ INSTALL_INIT=$BUILD/image/initramfs/root-image
 
 . config/sources
 
-MAKE="$TOOLCHAIN/bin/make"
-MAKEINSTALL="$TOOLCHAIN/bin/make -j1 DESTDIR=$SYSROOT_PREFIX install"
+MAKE="/usr/bin/make"
+MAKEINSTALL="$MAKE -j1 DESTDIR=$SYSROOT_PREFIX install"
 SED="sed -i"
 
 unset LD_LIBRARY_PATH
@@ -61,6 +67,7 @@ unset LD_LIBRARY_PATH
   PKG_REV="0"
   PKG_ARCH="any"
   PKG_LICENSE="unknown"
+  PKG_MAINTAINER="unknown"
   PKG_SITE=""
   PKG_URL=""
   PKG_SOURCE_NAME=""
@@ -184,11 +191,14 @@ XORG_PATH_DRIVERS=/usr/lib/xorg/modules/drivers
 
 . config/optimize
 
+#CROSSTOOL_PATH=/home/devel/crosstool
+CROSSTOOL_PATH=/opt/armhf-linux-2016.11
+
 if [ -z "$CCACHE_DIR" ]; then
   export CCACHE_DIR=$BUILD/.ccache
 fi
 export MAKEFLAGS=-j$CONCURRENCY_MAKE_LEVEL
-export PKG_CONFIG=$TOOLCHAIN/bin/pkg-config
+export PKG_CONFIG=/usr/bin/pkg-config
 
 if [[ -z "$PATH" || ( "$PATH" != "$TOOLCHAIN/bin:$TOOLCHAIN/sbin" && "$PATH" = "${PATH#$TOOLCHAIN/bin:$TOOLCHAIN/sbin:}" ) ]]; then
   export PATH="$TOOLCHAIN/bin:$TOOLCHAIN/sbin${PATH:+":$PATH"}"
@@ -211,7 +221,6 @@ fi
 BUILD_INDENT_SIZE=4
 
 # define colors
-if [ "$DISABLE_COLORS" != "yes" ]; then
   black="\e[0;30m"
   boldblack="\e[1;30m"
   red="\e[0;31m"
@@ -229,7 +238,6 @@ if [ "$DISABLE_COLORS" != "yes" ]; then
   white="\e[0;37m"
   boldwhite="\e[1;37m"
   endcolor="\e[0m"
-fi
 
 # multilib? nah
 unset CONFIG_SITE

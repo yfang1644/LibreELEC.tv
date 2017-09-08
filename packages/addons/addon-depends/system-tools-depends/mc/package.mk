@@ -19,12 +19,11 @@
 
 PKG_NAME="mc"
 PKG_VERSION="4.8.19"
-PKG_SHA256="eb9e56bbb5b2893601d100d0e0293983049b302c5ab61bfb544ad0ee2cc1f2df"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.midnight-commander.org"
 PKG_URL="http://ftp.midnight-commander.org/${PKG_NAME}-${PKG_VERSION}.tar.xz"
-PKG_DEPENDS_TARGET="toolchain libtool:host gettext:host glib pcre ncurses"
+PKG_DEPENDS_TARGET="libtool:host gettext:host glib pcre ncurses"
 PKG_SECTION="tools"
 PKG_SHORTDESC="mc: visual file manager"
 PKG_LONGDESC="mc is a visual file manager, licensed under GNU General Public License and therefore qualifies as Free Software. It's a feature rich full-screen text mode application that allows you to copy, move and delete files and whole directory trees, search for files and run commands in the subshell. Internal viewer and editor are included"

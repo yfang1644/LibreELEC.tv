@@ -18,14 +18,14 @@
 
 PKG_NAME="randrproto"
 PKG_VERSION="1.5.0"
-PKG_SHA256="4c675533e79cd730997d232c8894b6692174dce58d3e207021b8f860be498468"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
+PKG_MAINTAINER="Dave Airlie <airlied@redhat.com>"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/proto/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="x11/proto"
-PKG_SHORTDESC="randrproto: Randr extension headers"
+PKG_SHORTDESC="Randr extension headers"
 PKG_LONGDESC="Randr extension headers"
 
 PKG_IS_ADDON="no"
@@ -33,3 +33,7 @@ PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"
+
+make_package_target() {
+  :
+}

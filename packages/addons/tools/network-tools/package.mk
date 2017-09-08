@@ -23,7 +23,7 @@ PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE=""
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="virtual"
 PKG_SHORTDESC="A bundle of network tools and programs"
 PKG_LONGDESC="This bundle currently includes bwm-ng, iftop, iperf, irssi, iw, lftp, ncftp, ngrep, nmap, rsync, sshfs, tcpdump, udpxy and wireless_tools."
@@ -35,7 +35,7 @@ PKG_ADDON_PROVIDES=""
 
 PKG_AUTORECONF="no"
 
-PKG_DEPENDS_TARGET="toolchain \
+PKG_DEPENDS_TARGET="\
                     bwm-ng \
                     iftop \
                     iperf \

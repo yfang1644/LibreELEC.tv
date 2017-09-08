@@ -18,12 +18,11 @@
 
 PKG_NAME="tz"
 PKG_VERSION="2017b"
-PKG_SHA256="8e5d235f978a7463cda46fe0ea1f9d9f644a0f9f452678fcf61a37b73849a393"
 PKG_ARCH="any"
 PKG_LICENSE="Public Domain"
 PKG_SITE="http://www.iana.org/time-zones"
 PKG_URL="https://github.com/eggert/tz/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="system"
 PKG_SHORTDESC="tzdata"
 PKG_LONGDESC="tzdata"

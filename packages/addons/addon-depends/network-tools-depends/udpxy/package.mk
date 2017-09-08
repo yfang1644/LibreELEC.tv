@@ -18,12 +18,11 @@
 
 PKG_NAME="udpxy"
 PKG_VERSION="1.0.23-9"
-PKG_SHA256="6ce33b1d14a1aeab4bd2566aca112e41943df4d002a7678d9a715108e6b714bd"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.udpxy.com/download-en.html"
 PKG_URL="http://www.udpxy.com/download/1_23/${PKG_NAME}.${PKG_VERSION}-prod.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="tools"
 PKG_SHORTDESC="udpxy is a UDP-to-HTTP multicast traffic relay daemon"
 PKG_LONGDESC="udpxy is a UDP-to-HTTP multicast traffic relay daemon"

@@ -18,12 +18,11 @@
 
 PKG_NAME="nano"
 PKG_VERSION="2.5.3"
-PKG_SHA256="b2b060129b9feff2d4870d803a441178c96531de9aed144ec0b83bd63ccb12ee"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.nano-editor.org/"
 PKG_URL="http://ftpmirror.gnu.org/nano/$PKG_NAME-$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain ncurses"
+PKG_DEPENDS_TARGET="ncurses"
 PKG_SECTION="shell/texteditor"
 PKG_SHORTDESC="nano: Pico editor clone with enhancements"
 PKG_LONGDESC="GNU nano (Nano's ANOther editor, or Not ANOther editor) is an enhanced clone of the Pico text editor."

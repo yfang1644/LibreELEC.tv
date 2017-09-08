@@ -18,12 +18,11 @@
 
 PKG_NAME="libgcrypt"
 PKG_VERSION="1.7.6"
-PKG_SHA256="626aafee84af9d2ce253d2c143dc1c0902dda045780cc241f39970fc60be05bc"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://www.gnupg.org/"
 PKG_URL="https://www.gnupg.org/ftp/gcrypt/libgcrypt/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain libgpg-error"
+PKG_DEPENDS_TARGET="libgpg-error"
 PKG_SECTION="security"
 PKG_SHORTDESC="libgcrypt: General purpose cryptographic library"
 PKG_LONGDESC="Libgcrypt is a general purpose cryptographic library based on the code from GnuPG. It provides functions for all cryptographic building blocks: symmetric ciphers, hash algorithms, MACs, public key algorithms, large integer functions, random numbers and a lot of supporting functions."

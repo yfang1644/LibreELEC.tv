@@ -18,12 +18,11 @@
 
 PKG_NAME="libdvdread"
 PKG_VERSION="17d99db"
-PKG_SHA256="e7179b2054163652596a56301c9f025515cb08c6d6310b42b897c3ad11c0199b"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/xbmc/libdvdread"
 PKG_URL="https://github.com/xbmc/libdvdread/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain libdvdcss"
+PKG_DEPENDS_TARGET="libdvdcss"
 PKG_SECTION="multimedia"
 PKG_SHORTDESC="libdvdread: a library which provides a simple foundation for reading DVDs."
 PKG_LONGDESC="libdvdread is a library which provides a simple foundation for reading DVDs."

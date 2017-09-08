@@ -18,12 +18,11 @@
 
 PKG_NAME="lan951x-led-ctl"
 PKG_VERSION="0291b91"
-PKG_SHA256="c0d957ed043a3b709ef06e7b9f9620f15fd7c07225422ef445b59c886b8696e4"
 PKG_ARCH="arm"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/dradermacher/lan951x-led-ctl"
 PKG_URL="https://github.com/dradermacher/lan951x-led-ctl/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain libusb"
+PKG_DEPENDS_TARGET="libusb"
 PKG_SECTION="rpi-tools"
 PKG_SHORTDESC="Control LEDs connected to LAN9512/LAN9514 ethernet USB controllers"
 PKG_LONGDESC="Control LEDs connected to LAN9512/LAN9514 ethernet USB controllers"

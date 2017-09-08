@@ -23,7 +23,7 @@ PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE=""
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="virtual"
 PKG_SHORTDESC="A bundle of multimedia tools and programs"
 PKG_LONGDESC="This bundle currently includes alsamixer, mediainfo, mesa-demos, mpg123, opencaster, squeezelite, tsdecrypt and tstools."
@@ -35,7 +35,7 @@ PKG_ADDON_PROVIDES=""
 
 PKG_AUTORECONF="no"
 
-PKG_DEPENDS_TARGET="toolchain \
+PKG_DEPENDS_TARGET="\
                     alsa-utils \
                     mediainfo \
                     mesa-demos \

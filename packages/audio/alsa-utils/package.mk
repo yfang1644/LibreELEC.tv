@@ -18,14 +18,14 @@
 
 PKG_NAME="alsa-utils"
 PKG_VERSION="1.1.4"
-PKG_SHA256="a7831044de92c5bf33bf3365a3f36e49397f4191e934df460ae1ca15138c9d9d"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
+PKG_MAINTAINER="Jaroslav Kysela <perex@perex.cz>"
 PKG_SITE="http://www.alsa-project.org/"
 PKG_URL="ftp://ftp.alsa-project.org/pub/utils/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain alsa-lib ncurses"
+PKG_DEPENDS_TARGET="alsa-lib netbsd-curses"
 PKG_SECTION="audio"
-PKG_SHORTDESC="alsa-utils: Advanced Linux Sound Architecture utilities"
+PKG_SHORTDESC="Advanced Linux Sound Architecture utilities"
 PKG_LONGDESC="This package includes the utilities for ALSA, like alsamixer, aplay, arecord, alsactl, iecset and speaker-test."
 
 PKG_IS_ADDON="no"

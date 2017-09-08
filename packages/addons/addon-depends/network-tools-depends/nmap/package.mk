@@ -18,12 +18,11 @@
 
 PKG_NAME="nmap"
 PKG_VERSION="7.11"
-PKG_SHA256="dfc95db3a8ee4c56650dbaa5a1a1e989b2963de8faea2531c21e6fd6e0bccc2a"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://nmap.org/"
 PKG_URL="http://nmap.org/dist/${PKG_NAME}-${PKG_VERSION}.tgz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="tools"
 PKG_SHORTDESC="network tool"
 PKG_LONGDESC="Free Security Scanned for Network"

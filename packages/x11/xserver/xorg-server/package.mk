@@ -18,21 +18,23 @@
 
 PKG_NAME="xorg-server"
 PKG_VERSION="1.19.3"
-PKG_SHA256="677a8166e03474719238dfe396ce673c4234735464d6dadf2959b600d20e5a98"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
+PKG_MAINTAINER="Adam Jackson <ajax@redhat.com>"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/xserver/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros font-util fontsproto randrproto recordproto renderproto dri2proto dri3proto fixesproto damageproto videoproto inputproto xf86dgaproto xf86vidmodeproto xf86driproto xf86miscproto presentproto libpciaccess libX11 libXfont2 libXinerama libxshmfence libxkbfile libdrm openssl freetype pixman fontsproto systemd xorg-launch-helper"
+PKG_DEPENDS_TARGET="randrproto recordproto renderproto dri2proto dri3proto fixesproto damageproto videoproto inputproto xf86dgaproto xf86vidmodeproto xf86driproto xf86miscproto presentproto libpciaccess libX11 libXfont2 libXinerama libxshmfence libxkbfile libdrm libressl pixman fontsproto systemd"
 PKG_NEED_UNPACK="$(get_pkg_directory xf86-video-nvidia) $(get_pkg_directory xf86-video-nvidia-legacy)"
 PKG_SECTION="x11/xserver"
-PKG_SHORTDESC="xorg-server: The Xorg X server"
+PKG_SHORTDESC="The Xorg X server"
 PKG_LONGDESC="Xorg is a full featured X server that was originally designed for UNIX and UNIX-like operating systems running on Intel x86 hardware."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 get_graphicdrivers
+
+COMPOSITE_SUPPORT="yes"
 
 if [ "$COMPOSITE_SUPPORT" = "yes" ]; then
   PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET libXcomposite"
@@ -47,6 +49,9 @@ if [ ! "$OPENGL" = "no" ]; then
 else
   XORG_MESA="--disable-glx --disable-dri --disable-glamor"
 fi
+# build xorg-server against mesa anyway
+#  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET glproto mesa libepoxy glu"
+#  XORG_MESA="--enable-glx --enable-dri --enable-glamor"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-debug \
                            --disable-silent-rules \
@@ -168,6 +173,8 @@ post_makeinstall_target() {
     rm -rf $INSTALL/usr/bin/cvt
     rm -rf $INSTALL/usr/bin/gtf
   fi
+
+  PKG_DEPENDS_TARGET=`echo $PKG_DEPENDS_TARGET|sed 's/\b\w*proto //g'`
 }
 
 post_install() {

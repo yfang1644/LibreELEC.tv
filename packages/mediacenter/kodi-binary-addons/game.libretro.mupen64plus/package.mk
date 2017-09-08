@@ -18,14 +18,13 @@
 
 PKG_NAME="game.libretro.mupen64plus"
 PKG_VERSION="02f2216"
-PKG_SHA256="3543c77d12b6b62c9ff57481d8e81e2d61ab12443dbe9786d8c1f4f89480633f"
 PKG_REV="103"
 # no openGL suport in retroplayer yet
 PKG_ARCH="none"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.mupen64plus"
 PKG_URL="https://github.com/kodi-game/game.libretro.mupen64plus/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform libretro-mupen64plus"
+PKG_DEPENDS_TARGET="kodi-platform libretro-mupen64plus"
 PKG_SECTION=""
 PKG_SHORTDESC="game.libretro.mupen64plus: Mupen 64 Plus emulator for Kodi"
 PKG_LONGDESC="game.libretro.mupen64plus: Mupen 64 Plus emulator for Kodi"

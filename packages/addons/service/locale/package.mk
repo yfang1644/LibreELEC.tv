@@ -19,7 +19,7 @@
 PKG_NAME="locale"
 PKG_REV="101"
 PKG_ARCH="any"
-PKG_DEPENDS_TARGET="toolchain glibc"
+PKG_DEPENDS_TARGET="glibc"
 PKG_SECTION="service"
 PKG_SHORTDESC="Locale: allows users to set a custom locale to override the POSIX default"
 PKG_LONGDESC="Locale ($PKG_REV) allows users to set a custom locale in the OS to override the POSIX default"

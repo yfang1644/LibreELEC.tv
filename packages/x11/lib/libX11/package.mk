@@ -18,18 +18,18 @@
 
 PKG_NAME="libX11"
 PKG_VERSION="1.6.5"
-PKG_SHA256="4d3890db2ba225ba8c55ca63c6409c1ebb078a2806de59fb16342768ae63435d"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
+PKG_MAINTAINER="Alan Coopersmith <alan.coopersmith@oracle.com>"
 PKG_SITE="http://www.x.org/"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/lib/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain xproto:host xproto util-macros xextproto xcmiscproto bigreqsproto kbproto inputproto xtrans libXau libxcb"
+PKG_DEPENDS_TARGET="xcmiscproto bigreqsproto kbproto inputproto xextproto xtrans libxcb"
 PKG_SECTION="x11/lib"
-PKG_SHORTDESC="libx11: The X11 library"
+PKG_SHORTDESC="The X11 library"
 PKG_LONGDESC="LibX11 is the main X11 library containing all the client-side code to access the X11 windowing system."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-secure-rpc \
                            --disable-loadable-i18n \
@@ -47,7 +47,7 @@ PKG_CONFIGURE_OPTS_TARGET="--disable-secure-rpc \
                            --without-fop \
                            --enable-composecache \
                            --disable-lint-library \
-                           --disable-ipv6 \
+                           --enable-ipv6 \
                            --without-launchd \
                            --without-lint"
 
@@ -57,4 +57,8 @@ pre_configure_target() {
   export CFLAGS_FOR_BUILD="$HOST_CFLAGS"
   export LDFLAGS_FOR_BUILD="$HOST_LDFLAGS"
   unset PKG_CONFIG_ALLOW_SYSTEM_CFLAGS
+}
+
+post_makeinstall_target() {
+  PKG_DEPENDS_TARGET="xtrans libxcb"
 }

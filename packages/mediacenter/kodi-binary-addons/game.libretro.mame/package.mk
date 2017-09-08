@@ -18,14 +18,13 @@
 
 PKG_NAME="game.libretro.mame"
 PKG_VERSION="dede615"
-PKG_SHA256="67a191d7f1ffd28ae0cfe47ee1b3f139bf08b26413a2ab12b689cfaa5c7fbe78"
 PKG_REV="102"
 # broken
 PKG_ARCH="none"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.mame"
 PKG_URL="https://github.com/kodi-game/game.libretro.mame/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform libretro-mame"
+PKG_DEPENDS_TARGET="kodi-platform libretro-mame"
 PKG_SECTION=""
 PKG_SHORTDESC="game.libretro.mame: MAME emulator for Kodi"
 PKG_LONGDESC="game.libretro.mame: MAME emulator for Kodi"

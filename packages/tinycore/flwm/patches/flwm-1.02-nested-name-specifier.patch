@@ -1,0 +1,115 @@
+diff -Nura flwm-1.02/Frame.C flwm-1.02-change/Frame.C
+--- flwm-1.02/Frame.C	2006-06-29 14:08:35.000000000 +0800
++++ flwm-1.02-change/Frame.C	2016-11-09 19:01:11.557496916 +0800
+@@ -1,5 +1,6 @@
+ // Frame.C
+ 
++#define  FL_INTERNALS   1
+ #include "config.h"
+ #include "Frame.H"
+ #include "Desktop.H"
+@@ -915,7 +916,7 @@
+   // preserving stacking order:
+   for (p = &first; *p;) {
+     Frame* f = *p;
+-    if (f == this || f->is_transient_for(this) && f->state() != UNMAPPED) {
++    if (f == this || (f->is_transient_for(this) && (f->state() != UNMAPPED))) {
+       *p = f->next; // remove it from list
+       if (previous) {
+ 	XWindowChanges w;
+@@ -970,7 +971,7 @@
+ 
+ void Frame::iconize() {
+   for (Frame* c = first; c; c = c->next) {
+-    if (c == this || c->is_transient_for(this) && c->state() != UNMAPPED)
++    if (c == this || (c->is_transient_for(this) && (c->state() != UNMAPPED)))
+       c->state(ICONIC);
+   }
+ }
+@@ -1163,7 +1164,7 @@
+ #endif
+   }
+   if (min_h == max_h || flag(KEEP_ASPECT|NO_RESIZE) ||
+-      !max_h_button.value() && by+label_w+2*BUTTON_H > h()-BUTTON_BOTTOM) {
++      (!max_h_button.value() && (by+label_w+2*BUTTON_H > h()-BUTTON_BOTTOM))) {
+     max_h_button.hide();
+   } else {
+     max_h_button.position(BUTTON_LEFT,by);
+@@ -1171,7 +1172,7 @@
+     by += BUTTON_H;
+   }
+   if (min_w == max_w || flag(KEEP_ASPECT|NO_RESIZE) ||
+-      !max_w_button.value() && by+label_w+2*BUTTON_H > h()-BUTTON_BOTTOM) {
++      (!max_w_button.value() && (by+label_w+2*BUTTON_H > h()-BUTTON_BOTTOM))) {
+     max_w_button.hide();
+   } else {
+     max_w_button.position(BUTTON_LEFT,by);
+@@ -1652,8 +1653,7 @@
+ 	nh = iy+ih-(Fl::event_y_root()-dy);
+       else {ny = y(); nh = h();}
+       if (flag(KEEP_ASPECT)) {
+-	if (nw-dwidth > nh-dwidth
+-	    && (what&(FL_ALIGN_LEFT|FL_ALIGN_RIGHT))
++	if (((nw-dwidth > nh-dwidth) && (what&(FL_ALIGN_LEFT|FL_ALIGN_RIGHT)))
+ 	    || !(what&(FL_ALIGN_TOP|FL_ALIGN_BOTTOM)))
+ 	  nh = nw-dwidth+dheight;
+ 	else
+diff -Nura flwm-1.02/Hotkeys.C flwm-1.02-change/Hotkeys.C
+--- flwm-1.02/Hotkeys.C	2006-06-29 15:18:08.000000000 +0800
++++ flwm-1.02-change/Hotkeys.C	2016-11-09 18:55:56.259369956 +0800
+@@ -35,7 +35,7 @@
+ 
+ static void PreviousDesk() {
+   Desktop* search=Desktop::first;
+-  while (search->next && search->next!=Desktop::current()){
++  while (search->next && (search->next!=Desktop::current())){
+     search=search->next;
+   }
+   Desktop::current(search);
+@@ -182,9 +182,9 @@
+ int Handle_Hotkey() {
+   for (int i = 0; keybindings[i].key; i++) {
+     if (Fl::test_shortcut(keybindings[i].key) ||
+-	(keybindings[i].key & 0xFFFF) == FL_Delete
+-	&& Fl::event_key() == FL_BackSpace// fltk bug?
+-	) {
++	(((keybindings[i].key & 0xFFFF) == FL_Delete)
++	&& (Fl::event_key() == FL_BackSpace)// fltk bug?
++	)) {
+       keybindings[i].func();
+       return 1;
+     }
+diff -Nura flwm-1.02/main.C flwm-1.02-change/main.C
+--- flwm-1.02/main.C	2006-06-29 15:17:24.000000000 +0800
++++ flwm-1.02-change/main.C	2016-11-09 18:45:35.796522377 +0800
+@@ -2,6 +2,7 @@
+ // you can test the window controls.
+ //#define TEST 1
+ 
++#define FL_INTERNALS    1
+ #include "Frame.H"
+ #include <X11/Xproto.h>
+ #include <stdio.h>
+diff -Nura flwm-1.02/Menu.C flwm-1.02-change/Menu.C
+--- flwm-1.02/Menu.C	2006-07-01 06:09:08.000000000 +0800
++++ flwm-1.02-change/Menu.C	2016-11-09 19:00:29.849957584 +0800
+@@ -560,7 +560,7 @@
+       if (d == Desktop::current()) first_on_desk = menu+n;
+       for (c = Frame::first; c; c = c->next) {
+ 	if (c->state() == UNMAPPED || c->transient_for()) continue;
+-	if (c->desktop() == d || !c->desktop() && d == Desktop::current()) {
++	if (c->desktop() == d || (!c->desktop() && (d == Desktop::current()))) {
+ 	  init(menu[n],(char*)c);
+ #if FL_MAJOR_VERSION < 2
+ 	  init(menu[n],(char*)c);
+diff -Nura flwm-1.02/Rotated.C flwm-1.02-change/Rotated.C
+--- flwm-1.02/Rotated.C	2005-09-19 12:29:11.000000000 +0800
++++ flwm-1.02-change/Rotated.C	2016-11-09 18:49:31.396381191 +0800
+@@ -24,6 +24,7 @@
+ // if not defined then portions not used by flwm are included:
+ #define FLWM 1
+ 
++#define FL_INTERNALS  1
+ /* ********************************************************************** */
+ 
+ #include <FL/x.H>

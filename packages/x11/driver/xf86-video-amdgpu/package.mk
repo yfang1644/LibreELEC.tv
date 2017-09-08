@@ -18,12 +18,11 @@
 
 PKG_NAME="xf86-video-amdgpu"
 PKG_VERSION="1.3.0"
-PKG_SHA256="c1630f228938be949273f72b29ae70822dde064ad79c3ccb14d55f427e3f4e70"
 PKG_ARCH="x86_64"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.x.org/"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/driver/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain xorg-server"
+PKG_DEPENDS_TARGET="xorg-server"
 PKG_SECTION="x11/driver"
 PKG_SHORTDESC="xf86-video-amdgpu - AMD Radeon video driver for the Xorg X server"
 PKG_LONGDESC="AMD Xorg video driver"

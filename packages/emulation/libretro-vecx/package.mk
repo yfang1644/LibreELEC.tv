@@ -18,12 +18,11 @@
 
 PKG_NAME="libretro-vecx"
 PKG_VERSION="4e6961a"
-PKG_SHA256="680d0cc8678b7bf9e345005507a3e9c840c9fc8d02a70fa5064d6656169aea60"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/libretro/libretro-vecx"
 PKG_URL="https://github.com/libretro/libretro-vecx/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform"
+PKG_DEPENDS_TARGET="kodi-platform"
 PKG_SECTION="emulation"
 PKG_SHORTDESC="game.libretro.vecx: vecx for Kodi"
 PKG_LONGDESC="game.libretro.vecx: vecx for Kodi"

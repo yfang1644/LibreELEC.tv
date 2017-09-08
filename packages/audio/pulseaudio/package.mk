@@ -18,14 +18,14 @@
 
 PKG_NAME="pulseaudio"
 PKG_VERSION="10.0"
-PKG_SHA256="a3186824de9f0d2095ded5d0d0db0405dc73133983c2fbb37291547e37462f57"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
+PKG_MAINTAINER="Peter Meerwald <pmeerw@pmeerw.net, et al"
 PKG_SITE="http://pulseaudio.org/"
 PKG_URL="http://www.freedesktop.org/software/pulseaudio/releases/$PKG_NAME-$PKG_VERSION.tar.xz"
-PKG_DEPENDS_TARGET="toolchain libtool alsa-lib libsndfile soxr dbus systemd openssl libcap"
+PKG_DEPENDS_TARGET="alsa-lib libsndfile soxr dbus libressl libcap libtool"
 PKG_SECTION="audio"
-PKG_SHORTDESC="pulseaudio: Yet another sound server for Unix"
+PKG_SHORTDESC="Yet another sound server for Unix"
 PKG_LONGDESC="PulseAudio is a sound server for Linux and other Unix-like operating systems. It is intended to be an improved drop-in replacement for the Enlightened Sound Daemon (esound or esd). In addition to the features esound provides, PulseAudio has an extensible plugin architecture, support for more than one sink per source, better low-latency behavior, the ability to be embedded into other software, a completely asynchronous C API, a simple command line interface for reconfiguring the daemon while running, flexible and implicit sample type conversion and resampling, and a "Zero-Copy" architecture."
 
 PKG_IS_ADDON="no"

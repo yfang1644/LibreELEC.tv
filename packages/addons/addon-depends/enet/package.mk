@@ -18,12 +18,11 @@
 
 PKG_NAME="enet"
 PKG_VERSION="1.3.13"
-PKG_SHA256="e36072021faa28731b08c15b1c3b5b91b911baf5f6abcc7fe4a6d425abada35c"
 PKG_ARCH="any"
 PKG_LICENSE=""
 PKG_SITE=""
 PKG_URL="http://enet.bespin.org/download/$PKG_NAME-$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="network"
 PKG_SHORTDESC="ENet's purpose is to provide a relatively thin, simple and robust network communication layer on top of UDP (User Datagram Protocol)"
 PKG_LONGDESC="ENet's purpose is to provide a relatively thin, simple and robust network communication layer on top of UDP (User Datagram Protocol)"

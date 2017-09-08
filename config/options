@@ -12,7 +12,7 @@ fi
 # determines PROJECT, if not forced by user
 # default is Generic
 if [ -z "$PROJECT" ]; then
-  PROJECT="Generic"
+  PROJECT="RPi2"
 else
   PROJECT="$PROJECT"
 fi
@@ -20,7 +20,7 @@ fi
 # determines TARGET_ARCH, if not forced by user (x86_64 / arm)
 # default is x86_64
 if [ -z "$ARCH" ]; then
-  TARGET_ARCH="x86_64"
+  TARGET_ARCH="arm"
 else
   TARGET_ARCH="$ARCH"
 fi
@@ -28,7 +28,7 @@ fi
 ROOT=`pwd`
 DISTRO_DIR="$ROOT/distributions"
 PROJECT_DIR="$ROOT/projects"
-LINUX_DEPENDS="$PROJECT_DIR/$PROJECT/linux/linux.$TARGET_ARCH.conf $PROJECT_DIR/$PROJECT/devices/$DEVICE/linux/linux.$TARGET_ARCH.conf $ROOT/packages/linux/package.mk"
+LINUX_DEPENDS="$PROJECT_DIR/$PROJECT/linux/linux.$TARGET_ARCH.conf $PROJECT_DIR/$PROJECT/linux/linux.$TARGET_ARCH.conf $ROOT/packages/linux/package.mk"
 [ "$TARGET_ARCH" = "x86_64" ] && LINUX_DEPENDS+=" $ROOT/packages/linux-firmware/intel-ucode/package.mk $ROOT/packages/linux-firmware/x86-firmware/package.mk"
 
 # include versioning
@@ -50,8 +50,8 @@ LINUX_DEPENDS="$PROJECT_DIR/$PROJECT/linux/linux.$TARGET_ARCH.conf $PROJECT_DIR/
  fi
 
 # read board options if available
- if [ -f "$PROJECT_DIR/$PROJECT/devices/$DEVICE/options" ]; then
-   . $PROJECT_DIR/$PROJECT/devices/$DEVICE/options
+ if [ -f "$PROJECT_DIR/$PROJECT/options" ]; then
+   . $PROJECT_DIR/$PROJECT/options
  fi
 
 # Need to point to your actual cc

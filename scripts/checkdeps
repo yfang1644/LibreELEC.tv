@@ -76,11 +76,6 @@ case "$DISTRO" in
       ;;
 esac
 
-if ! test_libjson-perl; then
-  files="$files perl/JSON.pm"
-  files_pkg="$files_pkg libjson-perl"
-fi
-
 # project specific dependencies
 if [ -n "$EXTRA_DEPS" ] ; then
   deps="$deps $EXTRA_DEPS"
@@ -109,38 +104,40 @@ done
 
 i=0
 while file=`getarg $i $files` && [ -n "$file" ]; do
-  installed=N
-  file_pkg=`getarg $i $files_pkg`
-  [ "$(type -t "test_$file_pkg")" == "function" ] && test_$file_pkg && installed=Y
-  [ $installed == N -a -f $file ] && installed=Y
-  [ $installed == N ] && need="$need $file" && need_pkg="$need_pkg $file_pkg"
+  [ ! -f $file ] && need="$need $file" && need_pkg="$need_pkg `getarg $i $files_pkg`"
   i=$(($i+1))
 done
 
 if [ -n "$need" ]; then
   echo "**** Your system lacks the following tools needed to build $DISTRONAME ****"
-  echo $need provided by $need_pkg
+  echo $need
   echo "**** You seem to use a $DISTRO system ****"
 
   case "$DISTRO" in
     ubuntu|debian|\"elementary\")
-      get_yes_no && sudo apt-get install $need_pkg
+      read -p "would you like to install the needed tools ? (y/n) " ans
+      [ "$ans" = "y" ] && sudo apt-get install $need_pkg
       ;;
     fedora|centos|rhel)
       if [ `which dnf` ]; then YUM=dnf; else YUM=yum; fi
-      get_yes_no && sudo $YUM install $need_pkg
+      read -p "would you like to install the needed tools ? (y/n) " ans
+      [ "$ans" = "y" ] && sudo $YUM install $need_pkg
       ;;
     gentoo)
-      get_yes_no && sudo emerge --ask --deep $need_pkg
+      read -p "would you like to install the needed tools ? (y/n) " ans
+      [ "$ans" = "y" ] && sudo emerge --ask --deep $need_pkg
       ;;
     mageia)
-      get_yes_no && sudo urpmi $need_pkg
+      read -p "would you like to install the needed tools ? (y/n) " ans
+      [ "$ans" = "y" ] && sudo urpmi $need_pkg
       ;;
     arch)
-      get_yes_no && sudo pacman -Sy $need_pkg
+      read -p "would you like to install the needed tools ? (y/n) " ans
+      [ "$ans" = "y" ] && sudo pacman -Sy $need_pkg
       ;;
     opensuse)
-      get_yes_no && sudo zypper install -y --no-recommends $need_pkg
+      read -p "would you like to install the needed tools ? (y/n) " ans
+      [ "$ans" = "y" ] && sudo zypper install -y --no-recommends $need_pkg
       ;;
     *)
       echo "**** unsupported distro $DISTRO ****"
@@ -160,11 +157,7 @@ done
 
 i=0
 while file=`getarg $i $files` && [ -n "$file" ]; do
-  installed=N
-  file_pkg=`getarg $i $files_pkg`
-  [ "$(type -t "test_$file_pkg")" == "function" ] && test_$file_pkg && installed=Y
-  [ $installed == N -a -f $file ] && installed=Y
-  [ $installed == N ] && need="$need $file" && need_pkg="$need_pkg $file_pkg"
+  [ ! -f $file ] && need="$need $file" && need_pkg="$need_pkg `getarg $i $files_pkg`"
   i=$(($i+1))
 done
 

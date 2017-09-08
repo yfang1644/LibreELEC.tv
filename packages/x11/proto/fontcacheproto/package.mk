@@ -18,14 +18,14 @@
 
 PKG_NAME="fontcacheproto"
 PKG_VERSION="0.1.3"
-PKG_SHA256="1dcaa659d416272ff68e567d1910ccc1e369768f13b983cffcccd6c563dbe3cb"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
+PKG_MAINTAINER="Alan Coopersmith <alan.coopersmith@sun.com>"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/proto/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="x11/proto"
-PKG_SHORTDESC="fontcacheproto: Fontcache extension headers"
+PKG_SHORTDESC="Fontcache extension headers"
 PKG_LONGDESC="Fontcache extension headers"
 
 PKG_IS_ADDON="no"
@@ -33,3 +33,7 @@ PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"
+
+make_package_target() {
+  :
+}

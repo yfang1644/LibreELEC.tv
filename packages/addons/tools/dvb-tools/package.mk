@@ -23,7 +23,7 @@ PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE=""
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="virtual"
 PKG_SHORTDESC="DVB-Tools: is a bundle of dvb tools and programs"
 PKG_LONGDESC="This bundle currently includes blindscan-s2, dvb-apps, dvb-fe-tool, dvblast, dvbsnoop, mumudvb, szap-s2, tune-s2 and w_scan."
@@ -33,7 +33,7 @@ PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="DVB Tools"
 PKG_ADDON_TYPE="xbmc.python.script"
 
-PKG_DEPENDS_TARGET="toolchain \
+PKG_DEPENDS_TARGET="\
                     blindscan-s2 \
                     dvb-apps \
                     dvb-fe-tool \

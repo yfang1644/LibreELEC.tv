@@ -20,7 +20,7 @@
 
 PKG_NAME="mono_sqlite"
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain sqlite"
+PKG_DEPENDS_TARGET="sqlite"
 PKG_SHORTDESC="sqlite for mono"
 PKG_LONGDESC="libsqlite built shared for mono"
 

@@ -18,14 +18,14 @@
 
 PKG_NAME="sqlite"
 PKG_VERSION="autoconf-3200000"
-PKG_SHA256="3814c6f629ff93968b2b37a70497cfe98b366bf587a2261a56a5f750af6ae6a0"
 PKG_ARCH="any"
 PKG_LICENSE="PublicDomain"
+PKG_MAINTAINER="sqlite-users@mailinglists.sqlite.org"
 PKG_SITE="https://www.sqlite.org/"
-PKG_URL="https://www.sqlite.org/2017/$PKG_NAME-$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_URL="https://www.sqlite.org/2016/$PKG_NAME-$PKG_VERSION.tar.gz"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="database"
-PKG_SHORTDESC="sqlite: An Embeddable SQL Database Engine"
+PKG_SHORTDESC="An Embeddable SQL Database Engine"
 PKG_LONGDESC="SQLite is a C library that implements an embeddable SQL database engine. Programs that link with the SQLite library can have SQL database access without running a separate RDBMS process. The distribution comes with a standalone command-line access program (sqlite) that can be used to administer an SQLite database and which serves as an example of how to use the SQLite library. SQLite is not a client library used to connect to a big database server. SQLite is the server. The SQLite library reads and writes directly to and from the database files on disk."
 
 PKG_IS_ADDON="no"
@@ -62,17 +62,14 @@ PKG_AUTORECONF="no"
 # mmap_size pragma.
   CFLAGS="$CFLAGS -DSQLITE_TEMP_STORE=3 -DSQLITE_DEFAULT_MMAP_SIZE=268435456"
 
-# libsqlite3.a(sqlite3.o): requires dynamic R_X86_64_PC32 reloc against 'sqlite3_stricmp' which may overflow at runtime
+# host Python link to sqlite3 needs -fPIC
   CFLAGS="$CFLAGS -fPIC"
 
-pre_make_target() {
-  # dont build parallel
-  MAKEFLAGS=-j1
-}
-
-PKG_CONFIGURE_OPTS_TARGET="--enable-static \
-                           --disable-shared \
-                           --disable-readline \
+PKG_CONFIGURE_OPTS_TARGET="--disable-readline \
                            --enable-threadsafe \
                            --enable-dynamic-extensions \
                            --with-gnu-ld"
+
+post_makeinstall_target() {
+  PKG_VERSION="3.15.2"
+}

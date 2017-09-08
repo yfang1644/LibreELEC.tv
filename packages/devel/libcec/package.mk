@@ -18,13 +18,13 @@
 
 PKG_NAME="libcec"
 PKG_VERSION="5250931"
-PKG_SHA256="22c746602e85ea575bd247adfb17181849fb54d97428a25ccd29a064e43e6cde"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
+PKG_MAINTAINER="Lars Op den Kamp <lars.opdenkamp@pulse-eight.com>, et al"
 PKG_SITE="http://libcec.pulse-eight.com/"
 PKG_URL="https://github.com/Pulse-Eight/libcec/archive/$PKG_VERSION.tar.gz"
 [ "$PROJECT" = "imx6" ] && PKG_PATCH_DIRS="${LINUX#imx6-}"
-PKG_DEPENDS_TARGET="toolchain systemd lockdev p8-platform"
+PKG_DEPENDS_TARGET="systemd lockdev p8-platform"
 PKG_SECTION="system"
 PKG_SHORTDESC="libCEC is an open-source dual licensed library designed for communicating with the Pulse-Eight USB - CEC Adaptor"
 PKG_LONGDESC="libCEC is an open-source dual licensed library designed for communicating with the Pulse-Eight USB - CEC Adaptor."
@@ -34,7 +34,10 @@ PKG_AUTORECONF="no"
 
 PKG_CMAKE_OPTS_TARGET="-DBUILD_SHARED_LIBS=1 \
                        -DCMAKE_INSTALL_LIBDIR:STRING=lib \
-                       -DCMAKE_INSTALL_LIBDIR_NOARCH:STRING=lib"
+                       -DCMAKE_INSTALL_LIBDIR_NOARCH:STRING=lib \
+                       -DSKIP_PYTHON_WRAPPER=1 \
+                       -DCMAKE_PREFIX_PATH=$SYSROOT_PREFIX/usr"
+	# swig mark python3 which is error
 
 if [ "$KODIPLAYER_DRIVER" = "bcm2835-driver" ]; then
   PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET bcm2835-driver"

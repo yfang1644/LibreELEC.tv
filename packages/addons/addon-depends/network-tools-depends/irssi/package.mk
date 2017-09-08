@@ -18,12 +18,11 @@
 
 PKG_NAME="irssi"
 PKG_VERSION="0.8.19"
-PKG_SHA256="fe4f4b778698de8e1c319b9cd9b9ed5534f0ece7ac2bfa0af351a3157c6ec85b"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.irssi.org/"
 PKG_URL="https://github.com/irssi-import/irssi/releases/download/$PKG_VERSION/$PKG_NAME-$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain glib ncurses openssl"
+PKG_DEPENDS_TARGET="glib netbsd-curses openssl"
 PKG_SECTION="tools"
 PKG_SHORTDESC="IRC client"
 PKG_LONGDESC="Irssi is a terminal based IRC client for UNIX systems"
@@ -42,6 +41,7 @@ PKG_CONFIGURE_OPTS_TARGET="--with-sysroot=$SYSROOT_PREFIX \
 
 pre_configure_target() {
   export CFLAGS="$CFLAGS -I$PKG_BUILD"
+  export LIBS="-ltermcap"
 }
 
 makeinstall_target() {

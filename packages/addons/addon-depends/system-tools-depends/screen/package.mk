@@ -18,12 +18,11 @@
 
 PKG_NAME="screen"
 PKG_VERSION="4.5.1"
-PKG_SHA256="97db2114dd963b016cd4ded34831955dcbe3251e5eee45ac2606e67e9f097b2d"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.gnu.org/software/screen/"
 PKG_URL="http://ftpmirror.gnu.org/screen/$PKG_NAME-${PKG_VERSION}.tar.gz"
-PKG_DEPENDS_TARGET="toolchain ncurses"
+PKG_DEPENDS_TARGET="ncurses"
 PKG_SECTION="shell/console"
 PKG_SHORTDESC="terminal multiplexor with VT100/ANSI terminal emulation"
 PKG_LONGDESC="screen is a terminal multiplexor that runs several separate screens on a single physical character-based terminal. Each virtual terminal emulates a DEC VT100 plus several ANSI X3.64 and ISO 2022 functions. Screen sessions can be detached and resumed later on a different terminal."

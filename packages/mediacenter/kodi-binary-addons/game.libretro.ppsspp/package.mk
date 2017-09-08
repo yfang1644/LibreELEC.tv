@@ -18,14 +18,13 @@
 
 PKG_NAME="game.libretro.ppsspp"
 PKG_VERSION="4134990"
-PKG_SHA256="4d7278f066f0bb414559f2b40cb55fcd71a3f7e3a1ef22afd6745375c09a99a3"
 PKG_REV="102"
 # no openGL suport in retroplayer yet
 PKG_ARCH="none"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.ppsspp"
 PKG_URL="https://github.com/kodi-game/game.libretro.ppsspp/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform libretro-ppsspp"
+PKG_DEPENDS_TARGET="kodi-platform libretro-ppsspp"
 PKG_SECTION=""
 PKG_SHORTDESC="game.libretro.ppsspp: ppsspp for Kodi"
 PKG_LONGDESC="game.libretro.ppsspp: ppsspp for Kodi"

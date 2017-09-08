@@ -18,12 +18,11 @@
 
 PKG_NAME="irqbalanced"
 PKG_VERSION="7f31046"
-PKG_SHA256="e9f533bc2186fcef8456b78fb404ac981836d19f4b6ff10fede830b1df421717"
 PKG_ARCH="arm"
 PKG_LICENSE="other"
 PKG_SITE="http://www.freescale.com"
 PKG_URL="https://github.com/dv1/irqbalanced/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain systemd glib"
+PKG_DEPENDS_TARGET="systemd glib"
 PKG_SECTION="system"
 PKG_SHORTDESC="irqbalanced: distribute hardware interrupts across processors on a multiprocessor system."
 PKG_LONGDESC="irqbalanced: distribute hardware interrupts across processors on a multiprocessor system."

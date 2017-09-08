@@ -18,14 +18,14 @@
 
 PKG_NAME="xf86driproto"
 PKG_VERSION="2.1.1"
-PKG_SHA256="9c4b8d7221cb6dc4309269ccc008a22753698ae9245a398a59df35f1404d661f"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
+PKG_MAINTAINER="Alan Coopersmith <alan.coopersmith@oracle.com>"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/proto/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros"
+PKG_DEPENDS_TARGET=""
 PKG_SECTION="x11/proto"
-PKG_SHORTDESC="xf86driproto: XF86DRI extension headers"
+PKG_SHORTDESC="XF86DRI extension headers"
 PKG_LONGDESC="XF86DRI extension headers"
 
 PKG_IS_ADDON="no"
@@ -33,3 +33,7 @@ PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"
+
+make_package_target() {
+  :
+}

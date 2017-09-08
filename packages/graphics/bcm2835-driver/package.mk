@@ -18,12 +18,11 @@
 
 PKG_NAME="bcm2835-driver"
 PKG_VERSION="7f7df25"
-PKG_SHA256="eb5a677cd0e9c9160ae78bce4bf46cb66d30a20185e0fc1dd31afa5782967afa"
 PKG_ARCH="any"
 PKG_LICENSE="nonfree"
 PKG_SITE="http://www.broadcom.com"
 PKG_URL="$DISTRO_SRC/$PKG_NAME-$PKG_VERSION.tar.xz"
-PKG_DEPENDS_TARGET="toolchain dtc"
+PKG_DEPENDS_TARGET="dtc"
 PKG_SECTION="graphics"
 PKG_SHORTDESC="OpenMAX-bcm2835: OpenGL-ES and OpenMAX driver for BCM2835"
 PKG_LONGDESC="OpenMAX-bcm2835: OpenGL-ES and OpenMAX driver for BCM2835"

@@ -18,12 +18,11 @@
 
 PKG_NAME="libretro-handy"
 PKG_VERSION="420a16f"
-PKG_SHA256="da0aed7b964db7f77d20f27a2bec387136c47b39ebfff77fd3e4cdfb4451ab0a"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/libretro/libretro-handy"
 PKG_URL="https://github.com/libretro/libretro-handy/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain kodi-platform"
+PKG_DEPENDS_TARGET="kodi-platform"
 PKG_SECTION="emulation"
 PKG_SHORTDESC="game.libretro.handy: handy for Kodi"
 PKG_LONGDESC="game.libretro.handy: handy for Kodi"

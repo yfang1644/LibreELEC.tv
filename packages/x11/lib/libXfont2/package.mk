@@ -18,12 +18,11 @@
 
 PKG_NAME="libXfont2"
 PKG_VERSION="2.0.1"
-PKG_SHA256="e9fbbb475ddd171b3a6a54b989cbade1f6f874fc35d505ebc5be426bc6e4db7e"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
 PKG_URL="http://xorg.freedesktop.org/archive/individual/lib/$PKG_NAME-$PKG_VERSION.tar.bz2"
-PKG_DEPENDS_TARGET="toolchain util-macros fontcacheproto fontsproto xtrans freetype libfontenc"
+PKG_DEPENDS_TARGET="util-macros fontcacheproto fontsproto xtrans freetype libfontenc"
 PKG_SECTION="x11/lib"
 PKG_SHORTDESC="libxfont: X font Library"
 PKG_LONGDESC="X font Library"
